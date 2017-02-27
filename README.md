@@ -16,9 +16,9 @@ lastRightZeros(20);         // 4
 allRightZeros(20);          // 7
 ```
 
-> [VER DEMOSTRACÓN](http://htmlpreview.github.io/?https://github.com/olaferlandsen/test-saas/blob/master/factorial/example/index.html)
+> [VER DEMOSTRACIÓN](http://htmlpreview.github.io/?https://github.com/olaferlandsen/test-saas/blob/master/factorial/example/index.html)
 
-> [VER CODIGO FUENTE](factorial/Factorial.ts)
+> [VER CÓDIGO FUENTE](factorial/Factorial.ts)
 
 ### 2. Escriba una función/método que dado un número entero, entregue su representación en palabras, Ej. 145 ­> `"ciento cuarenta y cinco"`
 
@@ -30,9 +30,9 @@ numberName(0);    // retorna "cero"
 numberName(21);   // retorna "veintiuno"
 ```
 
-> [VER DEMOSTRACÓN](http://htmlpreview.github.io/?https://github.com/olaferlandsen/test-saas/blob/master/numberName/example/index.html)
+> [VER DEMOSTRACIÓN](http://htmlpreview.github.io/?https://github.com/olaferlandsen/test-saas/blob/master/numberName/example/index.html)
 
-> [VER CODIGO FUENTE](numberName/numberName.ts)
+> [VER CÓDIGO FUENTE](numberName/numberName.ts)
 
 ### 3. Considere un tablero de ajedrez de NxN, realice un algoritmo que visite cada espacio del tablero, usando solamente los movimientos de un caballo. (Puntos extras si se visita cada espacio una sola vez)
 
@@ -47,9 +47,9 @@ numberName(21);   // retorna "veintiuno"
 	// Get solutions
 	game.getSolutions()
 ```
-> [VER DEMOSTRACÓN](http://htmlpreview.github.io/?https://github.com/olaferlandsen/test-saas/blob/master/chess/example/index.html)
+> [VER DEMOSTRACIÓN](http://htmlpreview.github.io/?https://github.com/olaferlandsen/test-saas/blob/master/chess/example/index.html)
 
-> [VER CODIGO FUENTE](chess/Chess.ts)
+> [VER CÓDIGO FUENTE](chess/Chess.ts)
 
 ## Modelo de datos
 
@@ -65,7 +65,7 @@ numberName(21);   // retorna "veintiuno"
 > * alumno_pruebas
 > * alumno_curso
 
-> [VER CODIGO FUENTE](models/model.sql)
+> [VER CÓDIGO FUENTE](models/model.sql)
 
 ### 2. Escriba un Query que entregue la lista de alumnos para el curso `programación`.
 
@@ -192,7 +192,7 @@ juego.jugador(3).tomarCartaDelMazo();
 juego.expulsarJugador(2)
 ```
 
-> [VER CODIGO FUENTE](cards/Cards.ts)
+> [VER CÓDIGO FUENTE](cards/Cards.ts)
 
 ### 3. Diseño código frontend
 > ### *SOLUCIÓN:*
@@ -214,4 +214,4 @@ calendar.draw(document.getElementById('calendar'))
 ```
 > [VER DEMOSTRACIÓN](http://htmlpreview.github.io/?https://github.com/olaferlandsen/test-saas/blob/master/calendar/example/index.html)
 
-> [VER CODIGO FUENTE](calendar/Calendar.ts)
+> [VER CÓDIGO FUENTE](calendar/Calendar.ts)
