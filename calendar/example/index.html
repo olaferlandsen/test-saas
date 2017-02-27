@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Calendario</title>
+		<script src="../Calendar.js"></script>
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div id="calendar"></div>
+			<script>
+				(function () {
+					// este es el objeto dado como prueba
+					var citas = {
+						lunes: [
+							{nombre: 'Daniel', hora_inicio: '08:00', hora_termino: '09:00'},
+							{nombre: 'Daniel', hora_inicio: '09:30', hora_termino: '11:00'},
+							{nombre: 'Daniel', hora_inicio: '15:00', hora_termino: '16:00'},
+							{nombre: 'Daniel', hora_inicio: '17:00', hora_termino: '19:30'}
+						],
+						martes: [
+							{nombre: 'Daniel', hora_inicio: '08:00', hora_termino: '09:00'},
+							{nombre: 'Daniel', hora_inicio: '11:30', hora_termino: '12:00'},
+							{nombre: 'Daniel', hora_inicio: '15:00', hora_termino: '16:00'},
+							{nombre: 'Daniel', hora_inicio: '17:00', hora_termino: '19:30'}
+						],
+						miercoles: [
+							{nombre: 'Daniel', hora_inicio: '08:00', hora_termino: '09:00'},
+							{nombre: 'Daniel', hora_inicio: '10:30', hora_termino: '12:00'},
+							{nombre: 'Daniel', hora_inicio: '15:00', hora_termino: '16:00'},
+							{nombre: 'Daniel', hora_inicio: '17:00', hora_termino: '19:30'}
+						],
+						jueves: [
+							{nombre: 'Daniel', hora_inicio: '08:00', hora_termino: '09:00'},
+							{nombre: 'Daniel', hora_inicio: '09:30', hora_termino: '12:00'},
+							{nombre: 'Daniel', hora_inicio: '15:00', hora_termino: '16:00'},
+							{nombre: 'Daniel', hora_inicio: '17:00', hora_termino: '19:30'}
+						],
+						viernes: [
+							{nombre: 'Daniel', hora_inicio: '08:00', hora_termino: '09:00'},
+							{nombre: 'Daniel', hora_inicio: '09:30', hora_termino: '12:00'},
+							{nombre: 'Daniel', hora_inicio: '15:00', hora_termino: '16:00'},
+							{nombre: 'Daniel', hora_inicio: '17:00', hora_termino: '19:30'}
+						]
+					};
+					// creamos la instancia del calendario
+					var calendar = new Calendar(citas, {
+						step    : 30,
+						start   : '08:00', // si no se establece, entonces por defecto empezara desde 00.00
+						end     : '19:30', // si no se establece, entonces terminara en 23:59
+						headers : [ // si no se establecen, entonces mostrara el nombre del dia por defecto
+							'Lunes 09',
+							'Martes 10',
+							'Miercoles 11',
+							'Jueves 12',
+							'Viernes 13',
+							'Sabado 14',
+							'Domingo 15'
+						]
+					});
+					// dibujamos el calendario en el elemento con id "calendar"
+					calendar.draw(document.getElementById('calendar'))
+
+				})();
+
+			</script>
+		</div>
+	</body>
+</html>

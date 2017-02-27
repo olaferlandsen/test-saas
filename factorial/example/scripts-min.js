@@ -1,0 +1,1 @@
+var promise;angular.module("app",[]).controller("FactorialCtrl",function(r){r.$watch("number",function(a){var t=Number(a);t==a&&(r.iterativeFactorial=iterativeFactorial(t),r.recursiveFactorial=recursiveFactorial(t),r.allZeros=allRightZeros(t),r.lastZeros=lastRightZeros(t))})});

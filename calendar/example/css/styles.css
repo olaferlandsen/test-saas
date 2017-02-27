@@ -1,0 +1,93 @@
+html, body {
+	background: #ffffff;
+	font-family:arial, sans-serif, Tahoma;
+}
+.container {
+	width: 960px;
+	margin:0 auto;
+	background: white;
+	display: block;
+	padding:10px 0;
+}
+.calendar {
+	width: 100%;
+}
+.calendar .calendar-header  {
+	overflow: auto;
+	color:#3a48e3;
+	font-weight: bold;
+}
+.calendar .calendar-header .col  {
+	margin:0 1px;
+	width: 118px;
+	display: block;
+	float:left;
+	background: #d1e5ea;
+	text-align: center;
+
+}
+.calendar .calendar-header .col.next,
+.calendar .calendar-header .col.prev {
+	width: 58px;
+}
+.calendar .calendar-header .col.prev {
+	text-align: left;
+}
+.calendar .calendar-header .col.next  {
+	text-align: right;
+}
+
+.calendar .calendar-body {
+	width: 960px;
+	overflow: auto;
+}
+.calendar .calendar-body .col{
+	margin:0 1px;
+	width: 118px;
+	display: block;
+	float:left;
+	background: #ffffff;
+}
+
+.calendar .calendar-body .col.time {
+	width: 58px;
+	background-color: #efefef;
+	color:#6a6c74;
+	font-weight:bold;
+}
+.calendar .calendar-body .col .cell{
+	width: 100%;
+	height: 14px;
+	display: inline-block;
+	padding:2px 0;
+	margin:0px 0;
+	border:1px solid #c3c3c3;
+	border-left:1px solid #e2e2e2;
+	border-right:1px solid #f6f6f6;
+	background-color: #d1e5ea;
+}
+.calendar .calendar-body .col .cell.used{
+	background-color: #ffffff;
+	color:#3a48e3;
+}
+.calendar .calendar-body .col .cell .plus{
+	display: inline-block;
+	background: transparent url(../img/add.png) no-repeat 100% 100% ;
+	width: 14px;
+	height:14px;
+}
+.calendar .calendar-body .col .cell .edit{
+	display: inline-block;
+	background: transparent url(../img/calendar_edit.png) no-repeat 0 0;
+	width: 14px;
+	height:14px;
+}
+
+.calendar .calendar-body .col .cell .comment{
+	display: inline-block;
+	background: transparent url(../img/comment.png) no-repeat 100% 100%;
+	width: 14px;
+	height:14px;
+	float:right;
+}
+

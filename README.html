@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h2 id="testprogramación">Test Programación</h2>
+
+<h2 id="programación">Programación</h2>
+
+<h3 id="1.escribaunafunciónmétodoquedeterminelacantidadde0’saladerechadenfactorial">1. Escriba una función/método que determine la cantidad de 0’s a la derecha de n! (factorial)</h3>
+
+<blockquote>
+<h3 id="soluciÓn:"><em>SOLUCIÓN:</em></h3>
+</blockquote>
+
+<pre><code class="javascript">// Factor iterativo
+iterativeFactorial (20);    // 2432902008176640000
+// Factor Recursivo
+recursiveFactorial (20);    // 2432902008176640000
+// Ultimos ceros
+lastRightZeros(20);         // 4
+// Todos los ceros
+allRightZeros(20);          // 7
+</code></pre>
+
+<blockquote>
+<p><a href="factorial/example/index.html">VER DEMOSTRACÓN</a></p>
+
+<p><a href="factorial/Factorial.ts">VER CODIGO FUENTE</a></p>
+</blockquote>
+
+<h3 id="2.escribaunafunciónmétodoquedadounnúmeroenteroentreguesurepresentaciónenpalabrasej.145­cientocuarentaycinco">2. Escriba una función/método que dado un número entero, entregue su representación en palabras, Ej. 145 ­&gt; <code>&quot;ciento cuarenta y cinco&quot;</code></h3>
+
+<blockquote>
+<h3 id="soluciÓn:"><em>SOLUCIÓN:</em></h3>
+</blockquote>
+
+<pre><code class="javascript">numberName(1992); // retorna &quot;mil novecientos noventa y dos&quot;
+numberName(0);    // retorna &quot;cero&quot;
+numberName(21);   // retorna &quot;veintiuno&quot;
+</code></pre>
+
+<blockquote>
+<p><a href="numberName/example/index.html">VER DEMOSTRACÓN</a></p>
+
+<p><a href="numberName/numberName.ts">VER CODIGO FUENTE</a></p>
+</blockquote>
+
+<h3 id="3.considereuntablerodeajedrezdenxnrealiceunalgoritmoquevisitecadaespaciodeltablerousandosolamentelosmovimientosdeuncaballo.puntosextrassisevisitacadaespaciounasolavez">3. Considere un tablero de ajedrez de NxN, realice un algoritmo que visite cada espacio del tablero, usando solamente los movimientos de un caballo. (Puntos extras si se visita cada espacio una sola vez)</h3>
+
+<blockquote>
+<h3 id="soluciÓn:"><em>SOLUCIÓN:</em></h3>
+</blockquote>
+
+<pre><code class="javascript">    var size = 8;
+    // Create game instance
+    var game = new Chess(size, 0, 0);
+    // Solve game
+    game.solve();
+    // Get solutions
+    game.getSolutions()
+</code></pre>
+
+<blockquote>
+<p><a href="chess/example/index.html">VER DEMOSTRACÓN</a></p>
+
+<p><a href="chess/Chess.ts">VER CODIGO FUENTE</a></p>
+</blockquote>
+
+<h2 id="modelodedatos">Modelo de datos</h2>
+
+<h3 id="1.uncolegionecesitaunsistemaparaadministrarsuscursos.elsistematienequesuportarqueseleingresenvarioscursos.cadacursotendráunprofesoracargoyunaseriedealumnosinscritos.cadaprofesorasícomocadaalumnopuedeestarenmásdeuncurso.ademáscadacursotendráunacantidadnodeterminadadepruebasyelsistemadebepermitiringresarlanotaparacadaalumnoencadaprueba.todaslaspruebasvalenlomismo.">1. Un colegio necesita un sistema para administrar sus cursos. El sistema tiene que suportar que se le ingresen varios cursos. Cada curso tendrá un profesor a cargo y una serie de alumnos inscritos. Cada profesor, así como cada alumno puede estar en más de un curso. Además cada curso tendrá una cantidad no determinada de pruebas, y el sistema debe permitir ingresar la nota para cada alumno en cada prueba. Todas las pruebas valen lo mismo.</h3>
+
+<h3 id="escribaacontinuaciónlastablasqueutilizaríapararesolveresteproblemaconloscamposyllavesdeéstas.intentehacerelsistemalomásrobustoposibleperosinincluirdatosadicionalesalosqueseplanteanacá.">Escriba a continuación las tablas que utilizaría para resolver este problema con los campos y llaves de éstas. Intente hacer el sistema lo más robusto posible, pero sin incluir datos adicionales a los que se plantean acá.</h3>
+
+<h3 id="2.escribaunqueryqueentreguelalistadealumnosparaelcursoprogramación.">2. Escriba un Query que entregue la lista de alumnos para el curso <code>programación</code>.</h3>
+
+<blockquote>
+<h3 id="soluciÓn:"><em>SOLUCIÓN:</em></h3>
+</blockquote>
+
+<pre><code class="mysql-sql">SELECT
+    alumnos.id,
+    alumnos.nombre
+FROM
+    alumno_curso
+INNER JOIN alumnos ON (
+    alumnos.id = alumno_curso.alumnos_id
+)
+WHERE alumno_curso.cursos_id = 3
+LIMIT 1000
+</code></pre>
+
+<h3 id="3.escribaunqueryquecalculeelpromediodenotasdeunalumnoenuncurso">3. Escriba un Query que calcule el promedio de notas de un alumno en un curso</h3>
+
+<blockquote>
+<h3 id="soluciÓn:"><em>SOLUCIÓN:</em></h3>
+</blockquote>
+
+<pre><code class="mysql-sql">SELECT
+    ROUND(AVG(alumno_pruebas.nota), 2) AS `promedio`
+FROM
+    pruebas
+INNER JOIN alumno_pruebas ON (
+    pruebas.id = alumno_pruebas.pruebas_id
+)
+WHERE pruebas.cursos_id = 3
+AND alumno_pruebas.alumnos_id = 2
+LIMIT 1
+</code></pre>
+
+<h3 id="4.escribaunqueryqueentreguealosalumnosyelpromedioquetieneencadaramo.">4. Escriba un Query que entregue a los alumnos y el promedio que tiene en cada ramo.</h3>
+
+<blockquote>
+<h3 id="soluciÓn:"><em>SOLUCIÓN:</em></h3>
+</blockquote>
+
+<pre><code class="mysql-sql">SELECT
+    alumnos.nombre,
+    cursos.nombre,
+    ROUND(AVG(alumno_pruebas.nota), 1) as `promedio`
+FROM
+    alumno_pruebas
+INNER JOIN pruebas ON (
+    pruebas.id = alumno_pruebas.pruebas_id
+)
+INNER JOIN cursos ON (
+    cursos.id = pruebas.cursos_id
+)
+INNER JOIN alumnos ON(
+    alumnos.id = alumno_pruebas.alumnos_id
+)
+GROUP BY cursos.id, alumnos.id
+LIMIT 1000
+</code></pre>
+
+<h3 id="5.escribaunqueryquelistaatodoslosalumnosconmásdeunramoconpromediorojo.">5. Escriba un Query que lista a todos los alumnos con más de un ramo con promedio rojo.</h3>
+
+<blockquote>
+<h3 id="soluciÓn:"><em>SOLUCIÓN:</em></h3>
+</blockquote>
+
+<pre><code class="mysql-sql">SELECT
+    rojos.alumno_nombre
+FROM (
+    SELECT
+        alumnos.id as `alumno_id`,
+        alumnos.nombre AS `alumno_nombre`,
+        ROUND(AVG(alumno_pruebas.nota), 1) as `promedio`
+    FROM
+        alumno_pruebas
+    INNER JOIN pruebas ON (pruebas.id = alumno_pruebas.pruebas_id)
+    INNER JOIN alumnos ON(alumnos.id = alumno_pruebas.alumnos_id)
+    GROUP BY pruebas.cursos_id, alumnos.id
+    HAVING promedio &lt; 4
+) AS `rojos`
+GROUP BY rojos.alumno_id
+HAVING COUNT( rojos.alumno_id ) &gt; 1
+LIMIT 1000
+</code></pre>
+
+<h3 id="6.setieneunatablaconinformacióndejugadoresdetenis:">6. Se tiene una tabla con información de jugadores de tenis:</h3>
+
+<p>PLAYERS(Nombre, Pais, Ranking)
+Suponga que Ranking es un número de 1 a 100, que es distinto para cada jugador.
+Si la tabla en un momento dado tiene solo 20 tuplas, indique cuantas tuplas tiene la tabla que resulta de la siguiente consulta:
+SELECT c1.Nombre, c2.Nombre FROM PLAYERS c1, PLAYERS c2 WHERE c1.Ranking &gt; c2.Ranking</p>
+
+<blockquote>
+<h3 id="soluciÓn:"><em>SOLUCIÓN:</em></h3>
+
+<p><code>190</code></p>
+</blockquote>
+
+<h2 id="diseño">Diseño</h2>
+
+<h3 id="1.siustedestuvieraresolviendoelproblemadelcolegioconprogramaciónorientadaaobjetosdefinaqueclasesusaríamétodosylasvariablesdeestasclases.puedeutilizarellenguajequemásleacomodeobienpseudoscódigo.">1. Si usted estuviera resolviendo el problema del colegio con programación orientada a objetos, defina que clases usaría, métodos y las variables de estas clases. Puede utilizar el lenguaje que más le acomode o bien pseudos código.</h3>
+
+<h3 id="2.diseñeunmazodecartasorientadoaobjetosconpropiedadesymétodosbásicosqueconsidereparaserutilizadoendistintasaplicacionesqueutilicencartas.">2. Diseñe un mazo de cartas (orientado a objetos) con propiedades y métodos básicos que considere para ser utilizado en distintas aplicaciones que utilicen cartas.</h3>
+
+<blockquote>
+<h3 id="soluciÓn:"><em>SOLUCIÓN:</em></h3>
+
+<pre><code class="javascript">// El juego se llama &quot;Mi Juego de Cartas&quot;
+// El mazo de carta consta de 30 cartas iniciales.
+var juego = new Juego(&quot;Mi Juego de Cartas&quot;, 30);
+// Pedro(id:1) parte con 5 cartas al azar tomadas del mazo
+// Al mazo le quedan 25 cartas disponibles.
+juego.agregarJugador(1, &quot;Pedro&quot;, 5);
+// Jaun(id:2) parte con 5 cartas al azar tomadas del mazo
+// Al mazo le quedan 20 cartas disponibles.
+juego.agregarJugador(2, &quot;Juan&quot;, 5);
+// Diego(id:3) parte con 5 cartas al azar tomadas del mazo
+// Al mazo le quedan 15 cartas disponibles.
+juego.agregarJugador(3, &quot;Diego&quot;, 5);
+// &quot;Pedro&quot; da una carta a &quot;Juan&quot;.
+// Ahora &quot;Pedro&quot; tiene 4 cartas y &quot;Juan&quot; 6 cartas.
+// El mazo sigue teniendo 15 cartas disponibles.
+juego.jugador(1).darCartaAJuagador(2);
+// &quot;Diego&quot; roba una carta del mazo.
+// Ahora &quot;Diego&quot; tiene 6 cartas.
+// Al mazo le quedan 14 cartas disponibles.
+juego.jugador(3).tomarCartaDelMazo();
+// &quot;Juan&quot; hizo trampa y fue expulsado
+// El mazo recupera las cartas de &quot;Juan&quot;(6 cartas)
+juego.expulsarJugador(2)
+</code></pre>
+
+<p><a href="cards/Cards.ts">VER CODIGO FUENTE</a></p>
+</blockquote>
+
+<h3 id="3.diseñocódigofrontend">3. Diseño código frontend</h3>
+
+<blockquote>
+<h3 id="soluciÓn:"><em>SOLUCIÓN:</em></h3>
+</blockquote>
+
+<pre><code class="javascript">var calendar = new Calendar(citas, {
+    step    : 30,
+    headers : [
+        'Lunes 09',
+        'Martes 10',
+        'Miercoles 11',
+        'Jueves 12',
+        'Viernes 13',
+        'Sabado 14',
+        'Domingo 15'
+    ]
+});
+calendar.draw(document.getElementById('calendar'))
+</code></pre>
+
+<blockquote>
+<p><a href="calendar/example/index.html">VER DEMOSTRACIÓN</a></p>
+
+<p><a href="calendar/Calendar.ts">VER CODIGO FUENTE</a></p>
+</blockquote>
+
+</body>
+</html>

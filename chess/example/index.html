@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title>Lemontech Test</title>
+	<meta charset="utf-8">
+	<script src="../Chess.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="scripts.js"></script>
+	<link href="styles.css" rel="stylesheet">
+</head>
+	<body>
+		<div class="container" ng-app="app">
+			<div class="row" ng-controller="ChessCtrl">
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3>Ajedrez</h3>
+						</div>
+						<div class="panel-body">
+							<button ng-click="play()" class="btn btn-success btn-lg btn-block">Calcular movimientos</button>
+							<div class="board">
+								<div class="block-row"
+								     ng-repeat="block in board"
+								     id="row-{{$index}}">
+									<div class="block"
+									     ng-repeat="block in board"
+									     ng-class="{'clear': $index % 8 == 0, 'black' : $index % 2 == $parent.$index % 2, 'white': $index % 2 != $parent.$index % 2}"
+									     data-x="{{$index}}"
+									     data-y="{{$parent.$index}}"
+									     data-position="{{$index +''+ $parent.$index}}">
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3>Movimientos</h3>
+						</div>
+						<div class="panel-body">
+							<h3>{{ (index | number) || 0}}</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3>Codigo</h3>
+						</div>
+						<div class="panel-body">
+							<pre><code>var size = 8;</code><br/><code>$scope.chess = new Chess(size, 4 , 0);</code><br/><code>$scope.chess.solve();</code><br/><code>$scope.chess.getSolutions();</code></pre>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3>Solucion</h3>
+						</div>
+						<div class="panel-body">
+							<pre>{{stringSolution}}</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
