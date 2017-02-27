@@ -55,6 +55,15 @@ numberName(21);   // retorna "veintiuno"
 
 ### 1. Un colegio necesita un sistema para administrar sus cursos. El sistema tiene que suportar que se le ingresen varios cursos. Cada curso tendrá un profesor a cargo y una serie de alumnos inscritos. Cada profesor, así como cada alumno puede estar en más de un curso. Además cada curso tendrá una cantidad no determinada de pruebas, y el sistema debe permitir ingresar la nota para cada alumno en cada prueba. Todas las pruebas valen lo mismo.
 ### Escriba a continuación las tablas que utilizaría para resolver este problema con los campos y llaves de éstas. Intente hacer el sistema lo más robusto posible, pero sin incluir datos adicionales a los que se plantean acá.
+> ### *SOLUCIÓN:*
+
+![Modelo](resources/model.png)
+* alumnos
+* profesores
+* cursos
+* pruebas
+* alumno_pruebas
+* alumno_curso
 
 
 ### 2. Escriba un Query que entregue la lista de alumnos para el curso `programación`.
@@ -151,6 +160,7 @@ SELECT c1.Nombre, c2.Nombre FROM PLAYERS c1, PLAYERS c2 WHERE c1.Ranking > c2.Ra
 ## Diseño
 
 ### 1. Si usted estuviera resolviendo el problema del colegio con programación orientada a objetos, defina que clases usaría, métodos y las variables de estas clases. Puede utilizar el lenguaje que más le acomode o bien pseudos código.
+> ### *SOLUCIÓN:*
 
 ### 2. Diseñe un mazo de cartas (orientado a objetos) con propiedades y métodos básicos que considere para ser utilizado en distintas aplicaciones que utilicen cartas.
 
