@@ -16,7 +16,7 @@ lastRightZeros(20);         // 4
 allRightZeros(20);          // 7
 ```
 
-> [VER DEMOSTRACÓN](factorial/example/index.html)
+> [VER DEMOSTRACÓN](http://htmlpreview.github.io/?https://github.com/olaferlandsen/test-saas/factorial/example/index.html)
 
 > [VER CODIGO FUENTE](factorial/Factorial.ts)
 
@@ -30,7 +30,7 @@ numberName(0);    // retorna "cero"
 numberName(21);   // retorna "veintiuno"
 ```
 
-> [VER DEMOSTRACÓN](numberName/example/index.html)
+> [VER DEMOSTRACÓN](http://htmlpreview.github.io/?https://github.com/olaferlandsen/test-saas/numberName/example/index.html)
 
 > [VER CODIGO FUENTE](numberName/numberName.ts)
 
@@ -47,7 +47,7 @@ numberName(21);   // retorna "veintiuno"
 	// Get solutions
 	game.getSolutions()
 ```
-> [VER DEMOSTRACÓN](chess/example/index.html)
+> [VER DEMOSTRACÓN](http://htmlpreview.github.io/?https://github.com/olaferlandsen/test-saas/chess/example/index.html)
 
 > [VER CODIGO FUENTE](chess/Chess.ts)
 
@@ -212,6 +212,6 @@ var calendar = new Calendar(citas, {
 });
 calendar.draw(document.getElementById('calendar'))
 ```
-> [VER DEMOSTRACIÓN](calendar/example/index.html)
+> [VER DEMOSTRACIÓN](http://htmlpreview.github.io/?https://github.com/olaferlandsen/test-saas/calendar/example/index.html)
 
 > [VER CODIGO FUENTE](calendar/Calendar.ts)
