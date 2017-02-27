@@ -57,14 +57,15 @@ numberName(21);   // retorna "veintiuno"
 ### Escriba a continuación las tablas que utilizaría para resolver este problema con los campos y llaves de éstas. Intente hacer el sistema lo más robusto posible, pero sin incluir datos adicionales a los que se plantean acá.
 > ### *SOLUCIÓN:*
 
-![Modelo](resources/model.png)
-* alumnos
-* profesores
-* cursos
-* pruebas
-* alumno_pruebas
-* alumno_curso
+> ![Modelo](resources/model.png)
+> * alumnos
+> * profesores
+> * cursos
+> * pruebas
+> * alumno_pruebas
+> * alumno_curso
 
+> [VER CODIGO FUENTE](models/model.sql)
 
 ### 2. Escriba un Query que entregue la lista de alumnos para el curso `programación`.
 
