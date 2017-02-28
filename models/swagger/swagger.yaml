@@ -1,0 +1,369 @@
+swagger: '2.0'
+info:
+  title: Colegio
+  description: Colegio
+  termsOfService: 'https://colegio.com'
+  license:
+    name: MIT
+  version: 0.0.1
+host: localhost
+basePath: /
+schemes:
+  - http
+  - https
+produces:
+  - application/json
+paths:
+  /alumnos/all:
+    get:
+      description: Todos
+      operationId: listarAlumnos
+      responses:
+        '200':
+          description: Todos
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Alumno'
+  '/alumnos/{id}':
+    get:
+      description: ver por id
+      operationId: verAlumno
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: profile
+          schema:
+            $ref: '#/definitions/Alumno'
+    delete:
+      description: eliminar
+      operationId: eliminarAlumno
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: eliminar
+          schema:
+            $ref: '#/definitions/Boolean'
+  '/alumnos/{id}/pruebas':
+    get:
+      description: Ver pruebas
+      operationId: pruebasDeAlumno
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: eliminar
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/PruebaDeAlumno'
+  /alumnos/crear:
+    post:
+      summary: Crear
+      description: crear
+      operationId: crearAlumno
+      parameters:
+        - name: nombre
+          in: formData
+          description: nombre
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Boolean'
+        '400':
+          description: Invalid
+  /profesores/all:
+    get:
+      description: Todos
+      operationId: listarProfesores
+      responses:
+        '200':
+          description: Todos
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Profesor'
+  '/profesores/{id}':
+    get:
+      description: ver por id
+      operationId: verProfesor
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: profile
+          schema:
+            $ref: '#/definitions/Profesor'
+    delete:
+      description: eliminar
+      operationId: eliminarProfesor
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: eliminar
+          schema:
+            $ref: '#/definitions/Boolean'
+  /profesores/crear:
+    post:
+      summary: Crear
+      description: crear
+      operationId: crearProfesor
+      parameters:
+        - name: nombre
+          in: formData
+          description: nombre
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Boolean'
+        '400':
+          description: Invalid
+  /cursos/all:
+    get:
+      description: listarCursos
+      operationId: all
+      responses:
+        '200':
+          description: Todos
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Curso'
+  '/cursos/{id}':
+    get:
+      description: ver por id
+      operationId: verCurso
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: profile
+          schema:
+            $ref: '#/definitions/Curso'
+    delete:
+      description: eliminar
+      operationId: eliminarCurso
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: eliminar
+          schema:
+            $ref: '#/definitions/Boolean'
+  '/cursos/{id}/reprobados':
+    get:
+      description: ver por id
+      operationId: alumnosReprobadosDelCurso
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: profile
+          schema:
+            $ref: '#/definitions/CursoReprobados'
+  '/cursos/{id}/alumnos':
+    get:
+      description: Alumnos del curso
+      operationId: alumnosDelCurso
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: profile
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Alumno'
+  /cursos/crear:
+    post:
+      summary: Crear
+      description: crear
+      operationId: crearCurso
+      parameters:
+        - name: nombre
+          in: formData
+          description: nombre
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Boolean'
+        '400':
+          description: Invalid
+  /pruebas/all:
+    get:
+      description: Todos
+      operationId: listarPruebas
+      responses:
+        '200':
+          description: Todos
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Prueba'
+  '/pruebas/{id}':
+    get:
+      description: ver por id
+      operationId: verPrueba
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: profile
+          schema:
+            $ref: '#/definitions/Prueba'
+    delete:
+      description: eliminar
+      operationId: eliminarPrueba
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: eliminar
+          schema:
+            $ref: '#/definitions/Boolean'
+  /pruebas/crear:
+    post:
+      summary: Crear
+      description: crear
+      operationId: crearPrueba
+      parameters:
+        - name: nombre
+          in: formData
+          description: nombre
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Boolean'
+        '400':
+          description: Invalid
+definitions:
+  Boolean:
+    type: boolean
+  Alumno:
+    properties:
+      id:
+        description: Id del alumno
+        type: integer
+      nombre:
+        description: Nombre del alumno
+        type: string
+    type: object
+  Profesor:
+    properties:
+      id:
+        description: Id del profesor
+        type: integer
+      nombre:
+        description: Nombre del profesor
+        type: string
+    type: object
+  Curso:
+    properties:
+      id:
+        description: Id del curso
+        type: integer
+      nombre:
+        description: Nombre del curso
+        type: string
+    type: object
+  Prueba:
+    properties:
+      id:
+        description: Id de la prueba
+        type: integer
+      nombre:
+        description: Nombre de la prueba
+        type: string
+      curso:
+        description: Id del curso
+        type: integer
+    type: object
+  PruebaDeAlumno:
+    properties:
+      id:
+        description: Id de la prueba
+        type: integer
+      nombre:
+        description: Nombre de la prueba
+        type: string
+      curso:
+        description: Id del curso al que pertenece la prueba
+        type: integer
+      nota:
+        description: Nota de la prueba
+        type: integer
+    type: object
+  CursoReprobados:
+    properties:
+      alumno:
+        description: Id del alumno
+        type: integer
+      promedio:
+        description: promedio en el curo
+        type: string
+    type: object
+securityDefinitions:
+  token:
+    type: apiKey
+    description: API key
+    name: apikey
+    in: query
