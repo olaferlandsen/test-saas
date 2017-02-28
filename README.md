@@ -163,11 +163,15 @@ SELECT c1.Nombre, c2.Nombre FROM PLAYERS c1, PLAYERS c2 WHERE c1.Ranking > c2.Ra
 ### 1. Si usted estuviera resolviendo el problema del colegio con programación orientada a objetos, defina que clases usaría, métodos y las variables de estas clases. Puede utilizar el lenguaje que más le acomode o bien pseudos código.
 > ### *SOLUCIÓN Laravel Eloquent:*
 > En este caso particular, use Eloquent de Laravel(PHP). Poder extender el uso de este modelo es necesario usar el controlador de Laravel o el sistema de Rutas.
+
 > [VER CÓDIGO FUENTE](models/laravel/Models)
 
 > ### *SOLUCIÓN Swagger/OpenAPI:*
+
 > [VER CÓDIGO FUENTE JSON](models/swagger/swagger.json)
+
 > [VER CÓDIGO FUENTE YAML](models/swagger/swagger.yaml)
+
 > [VER DOCUMENTACIÓN](http://htmlpreview.github.io/?https://github.com/olaferlandsen/test-saas/blob/master/models/swagger/public/index.html)
 
 ### 2. Diseñe un mazo de cartas (orientado a objetos) con propiedades y métodos básicos que considere para ser utilizado en distintas aplicaciones que utilicen cartas.
