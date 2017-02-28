@@ -9,8 +9,8 @@
 	</head>
 	<body>
 		<div class="container" ng-app="app">
-			<div class="row">
-				<div class="col-md-12" ng-controller="NumberNameCtrl">
+			<div class="row" ng-controller="NumberNameCtrl">
+				<div class="col-md-6">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<h3>Nombre del numero</h3>
@@ -20,6 +20,26 @@
 							<div class="well text-center" ng-show="name.length > 0">
 								<h3>{{ name }}</h3>
 							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3>Ejemplos</h3>
+						</div>
+						<div class="panel-body">
+							<a ng-click=" number = '-1' " class="btn btn-success">-1</a>
+							<a ng-click=" number = '-1.7' " class="btn btn-success">-1.7</a>
+							<a ng-click=" number = '1.7' " class="btn btn-success">1,7</a>
+							<a ng-click=" number = '1992.0' " class="btn btn-success">1.992,0</a>
+							<a ng-click=" number = '1992.5' " class="btn btn-success">1.992,5</a>
+							<a ng-click=" number = '-29342' " class="btn btn-success">-29.342</a>
+							<a ng-click=" number = '-299342.9' " class="btn btn-success">-299.342,9</a>
+							<a ng-click=" number = '1000000' " class="btn btn-success">1.000.000</a>
+							<a ng-click=" number = '1000000.1' " class="btn btn-success">1.000.000,1</a>
+							<a ng-click=" number = '-1000000.1' " class="btn btn-success">-1.000.000,1</a>
 						</div>
 					</div>
 				</div>

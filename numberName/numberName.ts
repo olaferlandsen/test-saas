@@ -42,12 +42,18 @@ function numberName (value:number|string):string {
 	this.isNumeric = function (value:any):boolean {
 		return this.isFloat(value) || this.isInt(value);
 	};
-
+	/**
+	 *
+	 * */
+	this.isDecimal = function () {
+		return this.isFloat(this.value);
+	};
+	if (value === undefined || value === null || value === '') return '';
 	// remove all no numbers chars except "-".
-	if (typeof value === 'string') value = value.trim().replace(/[^\d\-]+/, '');
+	if (typeof value === 'string') value = value.trim().replace(/[^\d\-\.]+/g, '');
 
 	// Empty values are not allowed
-	if (value === undefined || value === null || String(value).length === 0) {
+	if (String(value).length === 0) {
 		throw  new Error('Invalid input value');
 	}
 	// try convert string to number.
@@ -96,7 +102,11 @@ function numberName (value:number|string):string {
 	/**
 	 * @return number
 	 * */
-	this.getAbsolute = function ():number {
+	this.getAbsolute = function (fixed?:number):number {
+		if (this.isNumeric(fixed)) {
+			let value = Number(this.value.toString().replace(/(\d+)(\.\d+?)?/, '$1'));
+			return Number(Math.abs(value).toFixed(fixed));
+		}
 		return Math.abs(this.value);
 	};
 	/**
@@ -108,9 +118,11 @@ function numberName (value:number|string):string {
 	/**
 	* @return string
 	* */
+
 	this.getName = function () {
 		let result:string = '';
-		let value = this.getAbsolute();
+		let value = this.getAbsolute(0);
+
 		if (value === 0) return 'cero';
 		else if (value> 999999) result = this.getMillions(value);
 		else if (value> 999) result = this.getThousands(value);
@@ -118,9 +130,16 @@ function numberName (value:number|string):string {
 		else if (value> 9) result= this.getTens(value);
 		else result = this.getUnits(value);
 		result = result.replace(/\s+cero\s*$/i, '');
-		if (this.isNegative()) return 'menos ' + result;
+		if (this.isNegative()) result = 'menos ' + result;
+
+		if (this.isDecimal()) {
+			let decimal = Number(this.value.toString().replace(/^(\d+)(.(\d+))?/, '$3'));
+			console.log('decimal:', decimal);
+			result += ' punto ' + this.getTens(decimal);
+		}
 		return result;
 	};
+
 	/**
 	* @param value {number}
 	* @return string
@@ -135,7 +154,7 @@ function numberName (value:number|string):string {
 	* @return string
 	* */
 	this.getTens = function (value:number):string {
-		if (value < 10) return this.getUnits(value);
+		if (value < 10) return this.getUnits(value).replace(/^cero/, '');
 		else if (value == 10) {
 			return 'diez';
 		}
@@ -157,12 +176,12 @@ function numberName (value:number|string):string {
 	* @return string
 	* */
 	this.getHundreds = function (value:number):string {
-		let valueString:any =value.toString();
+		let valueString:any =value.toString().replace(/^0+/, '');
 		if (value > 99) {
-			if (value == 100) return 'cien';
+			if (value === 100) return 'cien';
 			else {
 				let index = Number(value.toString().substr(0, 1));
-				return this._100_900[index-1] + ' ' + this.getTens (valueString.substr(1));
+				return this._100_900[index-1] + ' ' + this.getTens (valueString.substr(1)).replace(/^s+?cero/i, '');
 			}
 		}
 		else return this.getTens(value);
@@ -172,7 +191,7 @@ function numberName (value:number|string):string {
 	* @return string
 	* */
 	this.getThousands = function (value:number):string {
-		let stringValue = value.toString();
+		let stringValue = value.toString().replace(/^0+/, '');
 		let hundreds = Number(stringValue.substr(value.toString().length - 3));
 		let thousands = Number(stringValue.substr(0, value.toString().length - 3));
 		if (thousands > 0) {
@@ -194,7 +213,7 @@ function numberName (value:number|string):string {
 		let name:string = '';
 		let thousands:number = Number(value.toString().substr(value.toString().length - 6));
 		let million:number = Number(value.toString().substr(0, value.toString().length - 6));
-		if (million.toString().length > 1) {
+		if (million.toString() != "1") {
 			name = this.getHundreds(million) + ' millones';
 		}
 		else {
