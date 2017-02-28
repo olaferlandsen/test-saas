@@ -14,7 +14,7 @@ angular.module('app', [])
 			$scope.index = 0;
 			promise = $interval(function () {
 				var img = document.createElement('img');
-				img.src = 'chess-knight.svg';
+				img.src = 'chess-knight.png';
 				img.className = 'horse';
 				angular.element(document.querySelectorAll('.horse')).addClass('old');
 				if ($scope.solutions.hasOwnProperty( $scope.index )) {
@@ -24,6 +24,6 @@ angular.module('app', [])
 				}
 				if ($scope.index > Object.keys ($scope.solutions).length) $interval.cancel (promise);
 				$scope.index++;
-			}, 200);
+			}, 1000);
 		};
 	});
