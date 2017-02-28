@@ -203,7 +203,7 @@ juego.jugador(3).tomarCartaDelMazo();
 juego.expulsarJugador(2)
 ```
 
-> [VER CÓDIGO FUENTE](cards/Cards.ts)
+> [VER CÓDIGO FUENTE](cards/js/Cards.ts)
 
 ### 3. Diseño código frontend
 > ### *SOLUCIÓN:*
