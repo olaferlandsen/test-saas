@@ -14,10 +14,11 @@
 				<div class="col-md-6">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<h3>Ajedrez</h3>
+							<h3>Tablero</h3>
 						</div>
 						<div class="panel-body">
-							<button ng-click="play()" class="btn btn-success btn-lg btn-block">Calcular movimientos</button>
+							<button ng-click="play()" class="btn btn-success btn-lg btn-block">Empezar( 2 movimientos por segundo)</button><br>
+
 							<div class="board">
 								<div class="block-row"
 								     ng-repeat="block in board"
@@ -36,29 +37,19 @@
 					</div>
 				</div>
 				<div class="col-md-6">
-					<div class="panel panel-primary">
+					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3>Movimientos</h3>
+							<h3>Código</h3>
 						</div>
 						<div class="panel-body">
-							<h3>{{ (index | number) || 0}}</h3>
+							<pre><code>var size = 8;</code><br/><code>$scope.chess = new Chess(size, 0, 0);</code><br/><code>$scope.chess.solve();</code><br/><code>$scope.chess.getSolutions();</code></pre>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3>Codigo</h3>
-						</div>
-						<div class="panel-body">
-							<pre><code>var size = 8;</code><br/><code>$scope.chess = new Chess(size, 4 , 0);</code><br/><code>$scope.chess.solve();</code><br/><code>$scope.chess.getSolutions();</code></pre>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3>Solucion</h3>
+							<h3>Solución</h3>
 						</div>
 						<div class="panel-body">
 							<p>La siguiente tabla se lee desde el numero más bajo siguiendo al siguiente más alto. Ejemplo: 1 -> 3 -> 4 ...</p>

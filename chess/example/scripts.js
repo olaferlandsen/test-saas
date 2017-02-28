@@ -3,7 +3,7 @@ angular.module('app', [])
 	.controller('ChessCtrl', function ($scope, $interval) {
 		$scope.board = Array.apply(null, Array(8)).map(function (_, i) {return i});
 		var size = 8;
-		$scope.chess = new Chess(size, 4 , 0);
+		$scope.chess = new Chess(size, 0 , 0);
 		$scope.play = function() {
 			if (promise) $interval.cancel (promise);
 			angular.element(document.querySelectorAll('.horse')).remove();
@@ -24,6 +24,6 @@ angular.module('app', [])
 				}
 				if ($scope.index > Object.keys ($scope.solutions).length) $interval.cancel (promise);
 				$scope.index++;
-			}, 1000);
+			}, 500);
 		};
 	});

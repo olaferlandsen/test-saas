@@ -46,7 +46,6 @@ class Chess {
 			for (let y = 0; y < this.size; y++) this.setSolution(x, y, -1);
 		}
 		this.setSolution(this.x, this.y, 0);
-
 	}
 	solve () {
 		this.play(this.x, this.y, this.xPatron, this.yPatron, 1);
